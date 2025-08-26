@@ -1,0 +1,46 @@
+{
+    "workbench.editorAssociations": {
+        "*.jar": "default"
+    },
+    "git.autofetch": true,
+    "java.completion.favoriteStaticMembers": [
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "org.junit.jupiter.api.Assumptions.*",
+        "org.junit.jupiter.api.DynamicContainer.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*"
+    ],
+    "files.autoSave": "afterDelay",
+    "java.project.referencedLibraries": [
+        "lib\\javafx-base-*.jar",
+        "lib\\javafx-controls-*.jar",
+        "lib\\javafx-graphics-*.jar",
+        "lib\\javafx-fxml-*.jar",
+        "lib\\**\\*.jar"
+    ],
+    "java.debug.settings.console": "internalConsole",
+    "java.debug.settings.vmArgs": "--module-path lib --add-modules javafx.controls,javafx.fxml",
+    "jdk.runConfig.vmOptions": "--module-path lib --add-modules javafx.controls,javafx.fxml",
+    "explorer.confirmDelete": false,
+
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "java",
+                "name": "Launch Main",
+                "request": "launch",
+                "mainClass": "Main",
+                "vmArgs": "--module-path lib --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED -Dprism.order=sw -Djava.library.path=bin"
+            }
+        ]
+    },
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "out"
+}
