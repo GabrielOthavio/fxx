@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<vbox  xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController" spacing="20" aligment="CENTER" 
+    style="-fx-padding:30;-fx-background-color: #f4f4f4;">
+    <Label text="Sistema de vedna - CRUD-MVC" style="-fx-font-size: 24px; -f+x-font-weight: bold;"/>
+    <Vboc spacing="10" aligment="CENTER">
+        <Button text="Gerenciar clientes" onAction="#AbrirClientes" prefWidth="200"/>
+        <Button text="Gerenciar produtos" onAction="#AbrirProdutos" prefWidth="200"/>
+        <Button text="Gerenciar vendas" onAction="#AbrirVendas" prefWidth="200"/>
+        <Button text="Grafico de Vendas" onAction="#AbrirGrafico" prefWidth="200"/>
+    </Vboc>
+</vbox>
+
+    
