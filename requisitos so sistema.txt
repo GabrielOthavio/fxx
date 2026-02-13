@@ -1,0 +1,3 @@
+sistema roda em Windows 
+java 24.0.2
+jdk-24

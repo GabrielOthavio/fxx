@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GraficoController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <top>
+        <HBox spacing="15.0" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" />
+            </padding>
+            <ComboBox prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Últimos 6 meses" />
+                        <String fx:value="Últimos 12 meses" />
+                        <String fx:value="Todo o período" />
+                    </FXCollections>
+                </items>
+                <value>
+                    <String fx:value="Últimos 6 meses" />
+                </value>
+            </ComboBox>
+            
+            <Button text="Atualizar Gráfico" style="-fx-text-fill: blue;" />
+        </HBox>
+    </top>
+
+    <center>
+        <BarChart fx:id="barChart" title="Vendas Mensais" animated="true">
+            <xAxis>
+                <CategoryAxis fx:id="xAxis" label="Mês" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Valor (R$)" />
+            </yAxis>
+        </BarChart>
+    </center>
+
+    <bottom>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <Label text="Sistema de Vendas - Análise Gráfica" textFill="grey" alignment="CENTER_RIGHT" maxWidth="Infinity">
+                 <padding>
+                    <Insets top="10.0" />
+                 </padding>
+            </Label>
+        </VBox>
+    </bottom>
+</BorderPane>

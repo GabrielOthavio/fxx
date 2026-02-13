@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VendasController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <VBox spacing="8.0" maxWidth="350.0" minWidth="300.0">
+            <Label text="Nova Venda">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </Label>
+
+            <Label text="Data da Venda" />
+            <DatePicker fx:id="dateDataVenda" prefWidth="400.0" />
+
+            <Label text="Cliente" />
+            <ComboBox fx:id="comboCliente" promptText="Selecione um cliente..." prefWidth="400.0" />
+
+            <Label text="Produto" />
+            <ComboBox fx:id="comboProduto" promptText="Selecione um produto..." prefWidth="400.0" />
+            <Label fx:id="lblEstoqueDisponivel" text="Estoque: --" textFill="grey" />
+
+            <HBox spacing="10.0">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Quantidade" />
+                    <TextField fx:id="txtQuantidade" />
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Valor Unitário" />
+                    <TextField fx:id="txtValorUnitario" editable="false" />
+                </VBox>
+            </HBox>
+            
+            <HBox alignment="CENTER_RIGHT">
+                 <Label text="Valor Total: " />
+                 <Label fx:id="lblValorTotal" text="R$ 0,00" textFill="green">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                 </Label>
+            </HBox>
+
+            <Button text="Registrar Venda" onAction="#handleRegistrarVenda" maxWidth="Infinity" style="-fx-font-weight: bold; -fx-background-color: lightgreen;" />
+            
+            <HBox spacing="5.0" alignment="CENTER">
+                 <Button text="Atualizar" onAction="#handleAtualizar" style="-fx-background-color: orange;" />
+                 <Button text="Excluir" onAction="#handleExcluir" style="-fx-background-color: red; -fx-text-fill: white;" />
+                 <Button text="Limpar" onAction="#handleLimpar" />
+            </HBox>
+        </VBox>
+
+        <TableView fx:id="tableView" HBox.hgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="40.0" />
+                <TableColumn fx:id="colData" text="Data" prefWidth="80.0" />
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="120.0" />
+                <TableColumn fx:id="colProduto" text="Produto" prefWidth="120.0" />
+                <TableColumn fx:id="colQuantidade" text="Qtd" prefWidth="50.0" />
+                <TableColumn fx:id="colValorTotal" text="Total (R$)" prefWidth="80.0" />
+            </columns>
+        </TableView>
+    </HBox>
+</VBox>

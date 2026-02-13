@@ -1,0 +1,34 @@
+CREATE TABLE categorias (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT
+);
+
+CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    telefone VARCHAR(20),
+    endereco TEXT
+);
+
+CREATE TABLE produtos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco NUMERIC(10, 2) NOT NULL,
+    estoque INTEGER NOT NULL,
+    categoria_id INTEGER,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id)
+);
+
+CREATE TABLE vendas (
+    id SERIAL PRIMARY KEY,
+    data_venda DATE NOT NULL,
+    quantidade INTEGER NOT NULL,
+    valor_total NUMERIC(10, 2) NOT NULL,
+    cliente_id INTEGER,
+    produto_id INTEGER,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);

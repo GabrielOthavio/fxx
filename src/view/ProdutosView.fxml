@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProdutosController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label text="Gerenciamento de Produtos">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <VBox spacing="5.0">
+        <Label text="Nome" />
+        <TextField fx:id="txtNome" prefWidth="300.0" maxWidth="300.0" />
+        
+        <Label text="Descrição" />
+        <TextArea fx:id="txtDescricao" prefHeight="80.0" prefRowCount="3" prefWidth="300.0" maxWidth="300.0" />
+        
+        <HBox spacing="10.0">
+            <VBox>
+                <Label text="Preço" />
+                <TextField fx:id="txtPreco" prefWidth="150.0" />
+            </VBox>
+            <VBox>
+                <Label text="Estoque" />
+                <TextField fx:id="txtEstoque" prefWidth="100.0" />
+            </VBox>
+        </HBox>
+        
+        <Label text="Categoria" />
+        <ComboBox fx:id="comboCategoria" prefWidth="200.0" />
+    </VBox>
+
+    <HBox spacing="10.0">
+        <Button text="+ Salvar" onAction="#handleSalvar" style="-fx-background-color: lightgreen; -fx-text-fill: black;" />
+        <Button text="Atualizar" onAction="#handleAtualizar" style="-fx-background-color: orange; -fx-text-fill: black;" />
+        <Button text="Excluir" onAction="#handleExcluir" style="-fx-background-color: red; -fx-text-fill: white;" />
+        <Button text="Limpar" onAction="#handleLimpar" style="-fx-background-color: lightgrey;" />
+    </HBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50.0" />
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="150.0" />
+            <TableColumn fx:id="colDescricao" text="Descrição" prefWidth="200.0" />
+            <TableColumn fx:id="colPreco" text="Preço" prefWidth="80.0" />
+            <TableColumn fx:id="colEstoque" text="Estoque" prefWidth="70.0" />
+            <TableColumn fx:id="colCategoria" text="Categoria" prefWidth="120.0" />
+        </columns>
+    </TableView>
+</VBox>
